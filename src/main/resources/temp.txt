@@ -1,0 +1,3 @@
+EmployeePayRoll{id=1, name='manish', salary=34857.0}
+EmployeePayRoll{id=2, name='roshan', salary=46436.0}
+EmployeePayRoll{id=3, name='rohit', salary=355.0}
