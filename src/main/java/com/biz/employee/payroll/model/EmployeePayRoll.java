@@ -5,16 +5,6 @@ public class EmployeePayRoll {
     private String name;
     private double salary;
 
-    public EmployeePayRoll(int id, String name, double salary) {
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
-    }
-
-    public EmployeePayRoll() {
-
-    }
-
     @Override
     public String toString() {
         return "EmployeePayRoll{" +
