@@ -1,5 +1,6 @@
 import com.biz.employee.payroll.model.EmployeePayRoll;
 import com.biz.employee.payroll.service.EmployeePayrollService;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,6 +15,8 @@ public class EmployeePayrollServiceTest {
         employeePayRollList.add(new EmployeePayRoll(3,"rohit",355));
         EmployeePayrollService service=new EmployeePayrollService(employeePayRollList);
         service.writeFileData();
+        long entries=service.countEntries();
+        Assert.assertEquals(3,entries);
 
     }
 

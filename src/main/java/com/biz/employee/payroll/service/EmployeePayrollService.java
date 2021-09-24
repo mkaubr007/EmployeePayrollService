@@ -15,10 +15,8 @@ public class EmployeePayrollService extends RuntimeException{
     public EmployeePayrollService(List<EmployeePayRoll> employeePayRollList) {
         this.employeePayRolls=employeePayRollList;
     }
-
+    String payrollFileName="D:\\EmployeePayrollService\\src\\main\\resources\\temp.txt";
     public void writeFileData(){
-        String payrollFileName="D:\\EmployeePayrollService\\src\\main\\resources\\temp.txt";
-
         StringBuffer empDataBuffer=new StringBuffer();
         employeePayRolls.forEach(data->{
             String dataString=data.toString().concat("\n");
@@ -40,5 +38,13 @@ public class EmployeePayrollService extends RuntimeException{
         employeePayRoll.setSalary(scan.nextDouble());
         employeePayRolls.add(employeePayRoll);
     }
-
+    public long countEntries(){
+        long entries=0;
+        try{
+            entries=Files.lines(Paths.get(payrollFileName)).count();
+        }catch (IOException e){
+            System.out.println(e);
+        }
+        return entries;
+    }
 }
